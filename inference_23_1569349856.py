@@ -1,3 +1,5 @@
+# https://github.com/OpenTalker/video-retalking/issues/23#issuecomment-1569349856
+
 import numpy as np
 import cv2, os, sys, subprocess, platform, torch
 from tqdm import tqdm
