@@ -130,7 +130,9 @@ def face_detect(images, args, jaw_correction=False, detector=None):
     for rect, image in zip(predictions, images):
         if rect is None:
             cv2.imwrite('temp/faulty_frame.jpg', image) # check this frame where the face was not detected.
-            raise ValueError('Face not detected! Ensure the video contains a face in all the frames.')
+            #raise ValueError('Face not detected! Ensure the video contains a face in all the frames.')
+            print("[Aviso] Nenhum rosto detectado neste frame — usando frame original.")
+            return None
 
         y1 = max(0, rect[1] - pady1)
         y2 = min(image.shape[0], rect[3] + pady2)
